@@ -1,0 +1,16 @@
+<table class="table table-primary table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Adı Soyadı</th>
+            <th>Rolü</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users$ | async; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{user.fullname}}</td>
+            <td>{{user.role}}</td>
+        </tr>
+    </tbody>
+</table>

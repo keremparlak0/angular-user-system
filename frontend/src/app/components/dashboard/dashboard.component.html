@@ -1,0 +1,24 @@
+<table class="table table-primary table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Adı Soyadı</th>
+            <th>Kullanıcı Adı</th>
+            <th>Rolü</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users$ | async; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{user.fullname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.role}}</td>
+            <td>
+                <a class="nav-link bg-secondary text-white" style="text-align: center;" routerLink="/update/{{ user.id }}"
+                    routerLinkActive="active">Düzenle
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
